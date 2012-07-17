@@ -20,7 +20,7 @@ README.md 文件以“`项目名 - 项目简介`”为标题：
 
 开源站点将会根据这些信息来生成站点内容：
 
-![project name](projectname.png)
+![project name](https://github.com/NetEase/example/raw/master/doc/images/projectname.png)
 
 在第一部分写上项目介绍，并列出相关链接：
 
@@ -35,7 +35,7 @@ README.md 文件以“`项目名 - 项目简介`”为标题：
 
 根据这些信息来获取相关链接地址：
 
-![project detail](projectdetail.png)
+![project detail](https://github.com/NetEase/example/raw/master/doc/images/projectdetail.png)
 
 Tags 给项目任意打标签，如编写语言，常见的标签有 `web`、`java`、`c`、`html5`、`libary`、`plugin`。
 
@@ -47,8 +47,8 @@ Markdown 格式和 README.md 文件几个需要注意的地方：
 
 更多 markdown 例子查看 markdown 文档源文件和生成的 HTML。
 
- * [markdown-basics 源文件](https://github.com/NetEase/example/raw/master/doc/markdown-basics.md) [markdown-basics HTML](https://github.com/NetEase/example/blob/master/doc/markdown-basics.md)
- * [markdown-syntax 源文件](https://github.com/NetEase/example/raw/master/doc/markdown-syntax.md) [markdown-basics HTML](https://github.com/NetEase/example/blob/master/doc/markdown-syntax.md)
+ * markdown-basics [源文件](https://github.com/NetEase/example/raw/master/doc/markdown-basics.md) [HTML](https://github.com/NetEase/example/blob/master/doc/markdown-basics.md)
+ * markdown-syntax [源文件](https://github.com/NetEase/example/raw/master/doc/markdown-syntax.md) [HTML](https://github.com/NetEase/example/blob/master/doc/markdown-syntax.md)
 
 [轻量级标记语言]: http://en.wikipedia.org/wiki/Lightweight_markup_language
 [github-markup]: https://github.com/github/markup
@@ -56,7 +56,13 @@ Markdown 格式和 README.md 文件几个需要注意的地方：
 
 ### AUTHORS
 
-AUTHORS 文件列出作者及其联系方式。邮箱地址等请写在尖括号内。
+AUTHORS 文件列出项目的作者及其联系方式：
+
+    * Firstname Lastname <foo@bar.com> <twitter:@foo> <twitter:#foo-list> <weibo:@foo> <github:foo> <linkedin:foo> <http://foo.com>
+
+邮箱地址和主页直接用 `<>` 包起来，其他 twitter、weibo 等按上面的例子写，站点会展示这些信息：
+
+![authors](https://github.com/NetEase/example/raw/master/doc/images/authors.png)
 
 ### LICENSE
 
