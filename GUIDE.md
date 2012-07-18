@@ -111,7 +111,7 @@ AUTHORS 文件列出项目的作者及其联系方式：
 
 详见 <http://sourceware.org/autobook/>
 
-样例([源](http://www.gnu.org/software/hello/)) <https://github.com/NetEase/example/skel/c/>
+样例([源](http://www.gnu.org/software/hello/)) <https://github.com/NetEase/example/tree/master/skel/c/>
 
 ### python distutils
 
@@ -119,7 +119,7 @@ AUTHORS 文件列出项目的作者及其联系方式：
 
 详见 <http://docs.python.org/distutils/index.html>
 
-样例([源](http://pypi.python.org/pypi/foobar2/0.1)) <https://github.com/NetEase/example/skel/python/>
+样例([源](http://pypi.python.org/pypi/foobar2/0.1)) <https://github.com/NetEase/example/tree/master/skel/python/>
 
 ### java ant/maven
 
@@ -127,7 +127,7 @@ AUTHORS 文件列出项目的作者及其联系方式：
 
 详见 <http://ant.apache.org/> <http://maven.apache.org/>
 
-样例(源[1](https://github.com/sl4mmy/ant-skeleton)[2](https://github.com/evanclarke/Maven-Skeleton)) <https://github.com/NetEase/example/skel/java/>
+样例(源[1](https://github.com/sl4mmy/ant-skeleton) [2](https://github.com/evanclarke/Maven-Skeleton)) <https://github.com/NetEase/example/tree/master/skel/java/>
 
 ## 关于 Git
 
