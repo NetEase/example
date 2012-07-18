@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<project>
+    <description>
+        Common classpaths shared across all submodules.
+    </description>
+
+    <path id="compile.path">
+        <pathelement location="${project.root}/dependency/target/main/classes" />
+    </path>
+
+    <path id="compile.out">
+        <path refid="compile.path" />
+        <pathelement location="target/main/classes" />
+    </path>
+
+    <path id="test.compile.path">
+        <path refid="compile.out" />
+        <pathelement location="${libs}/junit-3.8.2/junit-3.8.2.jar" />
+    </path>
+
+    <path id="test.run.path">
+        <path refid="test.compile.path" />
+        <pathelement location="target/test/classes" />
+    </path>
+</project>

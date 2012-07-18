@@ -1,0 +1,231 @@
+<?xml version="1.0"?>
+<project>
+    <description>
+        Common functional targets shared across all submodules.
+    </description>
+
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+        <classpath>
+            <pathelement location="${libs}/ant-contrib-1.0b3/ant-contrib-1.0b3.jar" />
+        </classpath>
+    </taskdef>
+
+    <macrodef name="_build-all">
+        <attribute name="target" />
+        <sequential>
+            <subant target="@{target}">
+                <filelist refid="subprojects" />
+            </subant>
+        </sequential>
+    </macrodef>
+
+    <macrodef name="_bump-number">
+        <attribute name="level" default="build.number" />
+        <sequential>
+            <propertyfile file="${project.root}/build-numbers.properties" comment=" Version numbers">
+                <entry key="@{level}" default="0" type="int" operation="+" />
+            </propertyfile>
+        </sequential>
+    </macrodef>
+
+    <macrodef name="_zero-number">
+        <attribute name="level" default="build.number" />
+        <sequential>
+            <propertyfile file="${project.root}/build-numbers.properties" comment=" Version numbers">
+                <entry key="@{level}" value="0" default="0" type="int" />
+            </propertyfile>
+        </sequential>
+    </macrodef>
+
+    <target name="--check-build-numbers-file">
+        <available file="${project.root}/build-numbers.properties" property="build.numbers.file.exists" />
+    </target>
+
+    <target name="--create-build-numbers-file" unless="build.numbers.file.exists">
+        <propertyfile file="${project.root}/build-numbers.properties" comment=" Version numbers">
+            <entry key="build.major" default="${build.major}" type="int" />
+            <entry key="build.minor" default="${build.minor}" type="int" />
+            <entry key="build.number" default="${build.number}" type="int" />
+        </propertyfile>
+    </target>
+
+    <target name="--bump">
+        <_bump-number />
+    </target>
+
+    <target name="--bump-major">
+        <_bump-number level="build.major" />
+    </target>
+
+    <target name="--bump-minor">
+        <_bump-number level="build.minor" />
+    </target>
+
+    <target name="--zero">
+        <_zero-number />
+    </target>
+
+    <target name="--zero-minor">
+        <_zero-number level="build.minor" />
+    </target>
+
+    <target name="--clean">
+        <delete dir="target" />
+    </target>
+
+    <target name="--clean-all">
+        <_build-all target="clean" />
+    </target>
+
+    <target name="--compile-init">
+        <mkdir dir="target/main/classes" />
+    </target>
+
+    <target name="--compile">
+        <javac srcdir="src/main/java" destdir="target/main/classes" classpathref="compile.path" debug="on" />
+    </target>
+
+    <target name="--compile-all">
+        <_build-all target="-compile" />
+    </target>
+
+    <target name="--javadoc-init">
+        <mkdir dir="target/docs/${ant.project.name}-${version.number}/api" />
+    </target>
+
+    <target name="--javadoc">
+        <javadoc destdir="target/docs/${ant.project.name}-${version.number}/api"
+          breakiterator="yes" failonerror="true" classpathref="compile.out">
+            <packageset dir="src/main/java" />
+        </javadoc>
+    </target>
+
+    <target name="--javadoc-all">
+        <_build-all target="-javadoc" />
+    </target>
+
+    <target name="--package-init">
+        <mkdir dir="target/dist" />
+        <mkdir dir="target/main/resources" />
+        <copy todir="target/main/resources" includeEmptyDirs="false" failonerror="false">
+            <fileset dir="src/main/resources" />
+        </copy>
+    </target>
+
+    <target name="--package">
+        <jar destfile="target/dist/${ant.project.name}-${version.number}.jar">
+            <fileset dir="target/main/classes" />
+            <fileset dir="target/main/resources" />
+        </jar>
+    </target>
+
+    <target name="--package-all">
+        <!-- Must maintain & sync packaging steps manually to avoid compiling, testing, and javadocing each subproject twice -->
+        <_build-all target="--package-init" />
+        <_build-all target="--package" />
+        <_build-all target="--package-docs" />
+        <_build-all target="--package-src-init" />
+        <_build-all target="--package-src" />
+    </target>
+
+    <target name="--package-docs">
+        <zip destfile="target/dist/${ant.project.name}-docs-${version.number}.zip">
+            <fileset dir="target/docs" includes="${ant.project.name}-${version.number}/**"/>
+        </zip>
+    </target>
+
+    <target name="--package-src-init">
+        <mkdir dir="target/src/${ant.project.name}-${version.number}" />
+        <copy todir="target/src/${ant.project.name}-${version.number}" includeEmptyDirs="true" failonerror="false">
+            <fileset dir="." excludes="target/**,.classes-ide/**" />
+        </copy>
+    </target>
+
+    <target name="--package-src">
+        <zip destfile="target/dist/${ant.project.name}-src-${version.number}.zip">
+            <fileset dir="target/src" includes="${ant.project.name}-${version.number}/**"/>
+        </zip>
+    </target>
+
+    <target name="--release-clean">
+        <delete dir="${project.root}/target" />
+    </target>
+
+    <target name="--release-init">
+        <mkdir dir="${project.root}/target/dist" />
+        <mkdir dir="${project.root}/target/packages/jars" />
+        <copy todir="${project.root}/target/packages/jars" flatten="true">
+            <fileset dir="${project.root}" includes="*/target/dist/*-${version.number}.jar" />
+        </copy>
+    </target>
+
+    <target name="--release">
+        <zip destfile="${project.root}/target/dist/${ant.project.name}-${version.number}.zip">
+            <fileset dir="${project.root}/target/packages/jars" includes="*-${version.number}.jar" />
+        </zip>
+    </target>
+
+    <target name="--release-docs-init">
+        <mkdir dir="${project.root}/target/packages/docs" />
+        <copy todir="${project.root}/target/packages/docs" flatten="true">
+            <fileset dir="${project.root}" includes="*/target/dist/*-docs-${version.number}.zip" />
+        </copy>
+    </target>
+
+    <target name="--release-docs">
+        <zip destfile="${project.root}/target/dist/${ant.project.name}-docs-${version.number}.zip">
+            <fileset dir="${project.root}/target/packages/docs" includes="*-docs-${version.number}.zip" />
+        </zip>
+    </target>
+
+    <target name="--release-src-init">
+        <mkdir dir="${project.root}/target/src/${ant.project.name}-${version.number}" />
+        <copy todir="${project.root}/target/src/${ant.project.name}-${version.number}" includeEmptyDirs="true" failonerror="false">
+            <fileset dir="${project.root}" excludes="**/target/**,**/.classes-ide/**" />
+        </copy>
+    </target>
+
+    <target name="--release-src">
+        <zip destfile="${project.root}/target/dist/${ant.project.name}-src-${version.number}.zip">
+            <fileset dir="${project.root}/target/src" includes="${ant.project.name}-${version.number}/**"/>
+        </zip>
+    </target>
+
+    <target name="--test-init">
+        <mkdir dir="target/test/classes" />
+        <mkdir dir="target/test/results" />
+        <mkdir dir="target/test/report" />
+    </target>
+
+    <target name="--test-compile">
+        <javac srcdir="src/test/java" destdir="target/test/classes" classpathref="test.compile.path" debug="on" />
+    </target>
+
+    <target name="--test">
+        <junit haltonfailure="yes" fork="yes" forkmode="once" printsummary="no">
+            <classpath refid="test.run.path" />
+
+            <formatter type="brief" usefile="no" />
+            <formatter type="xml" usefile="yes" />
+
+            <batchtest fork="yes" todir="target/test/results">
+                <fileset dir="src/test/java">
+                    <include name="**/*Test.java" />
+                </fileset>
+            </batchtest>
+        </junit>
+    </target>
+
+    <target name="--test-all">
+        <_build-all target="-test" />
+    </target>
+
+    <target name="--test-report">
+        <junitreport todir="target/test/report">
+            <fileset dir="target/test/results">
+                <include name="TEST-*.xml" />
+            </fileset>
+            <report format="frames" todir="target/test/report/html" />
+        </junitreport>
+    </target>
+</project>

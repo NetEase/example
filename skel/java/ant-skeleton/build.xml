@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<project name="skeleton" default="dev">
+    <description>
+        Skeleton - add description
+    </description>
+
+    <property name="project.root" location="${basedir}" />
+
+    <!-- Add each subproject's build file here, in order of dependencies (dependent subprojects after their dependencies)-->
+    <filelist id="subprojects" dir="${project.root}" files="dependency/build.xml,main/build.xml"/>
+
+    <import file="${project.root}/build-properties.xml" />
+    <import file="${project.root}/build-delegates.xml" />
+
+    <target name="bump-major" depends="-bump-major" description="--> Bumps major version number" />
+    <target name="bump-minor" depends="-bump-minor" description="--> Bumps minor version number" />
+    <target name="clean" depends="-clean-all" description="--> Cleans all subprojects" />
+    <target name="dev" depends="-dev-all" description="--> Compiles and tests all subprojects" />
+    <target name="release" depends="-release" description="--> Packages all subprojects and creates a complete binary distribution" />
+</project>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<project name="dependency" default="dev">
+    <description>
+        Dependency - add description
+    </description>
+
+    <property name="project.root" location="${basedir}/.." />
+
+    <import file="${project.root}/build-properties.xml" />
+    <import file="${project.root}/build-delegates.xml" />
+    <import file="build-paths.xml" />
+
+    <target name="clean" depends="-clean" description="--> Cleans all build artifacts and temporary files" />
+    <target name="dev" depends="-dev" description="--> Compiles all source code, runs all tests" />
+    <target name="package" depends="-package" description="--> Compiles, tests, and creates package for release" />
+</project>

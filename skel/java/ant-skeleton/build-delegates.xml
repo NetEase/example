@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<project>
+    <description>
+        Common target dependencies shared across all submodules.
+    </description>
+
+    <import file="build-targets.xml" />
+
+    <target name="-bump" depends="-build-numbers-file,--bump" />
+    <target name="-bump-major" depends="-build-numbers-file,--bump-major,--zero-minor,--zero" />
+    <target name="-bump-minor" depends="-build-numbers-file,--bump-minor,--zero" />
+    <target name="-build-numbers-file" depends="--check-build-numbers-file,--create-build-numbers-file" />
+
+    <target name="-clean" depends="--clean" />
+    <target name="-clean-all" depends="--clean-all,--release-clean" />
+
+    <target name="-compile" depends="--compile-init,--compile" />
+    <target name="-compile-all" depends="--compile-all" />
+
+    <target name="-dev" depends="-compile,-test" />
+    <target name="-dev-all" depends="-compile-all,-test-all" />
+
+    <target name="-javadoc" depends="--javadoc-init,--javadoc" />
+    <target name="-javadoc-all" depends="--javadoc-all" />
+
+    <target name="-package" depends="-dev,-javadoc,--package-init,--package,--package-docs,--package-src-init,--package-src" />
+    <target name="-package-all" depends="-dev-all,-javadoc-all,--package-all" />
+
+    <target name="-release"
+	  depends="-package-all,--release-init,--release,--release-docs-init,--release-docs,--release-src-init,--release-src,-bump" />
+
+    <target name="-test" depends="--test-init,--test-compile,--test,--test-report" />
+    <target name="-test-all" depends="--test-all" />
+</project>

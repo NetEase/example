@@ -11,7 +11,7 @@
 
 GitHub 支持多种[轻量级标记语言][](详见[github-markup][])，可以将纯文本转换成 HTML，README 文件使用 [markdown][] 格式来编写，并保存为 README.md，以便 github 识别。
 
-README.md 文件内容包括项目介绍、如何安装、如何使用。
+README.md 文件内容包括项目介绍、如何编译安装、如何使用。
 
 README.md 文件以“`项目名 - 项目简介`”为标题：
 
@@ -94,7 +94,9 @@ AUTHORS 文件列出项目的作者及其联系方式：
 
     $ git push origin --tags
 
-关于 git tag 的详细信息看 [git-tag][] 或者运行 `git help tag`。
+站点会根据 git tag 生成版本信息，详见上面截图中的 `Quick Info`。
+
+关于 git tag 的详细信息查看 [git-tag][] 或者运行 `git help tag`。
 
 [git-tag]: http://git-scm.com/book/zh/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE
 
@@ -102,15 +104,30 @@ AUTHORS 文件列出项目的作者及其联系方式：
 
 打包请遵循所使用的语言的惯例。
 
-### autotools
+### c autotools
 
 `make dist` 生成的 release tarball 里带有 configure 和 HTML 格式的文档，允许在另外一个目录里
 `configure && make && make install` ，并能成功安装。
 
+详见 <http://sourceware.org/autobook/>
+
+样例([源](http://www.gnu.org/software/hello/)) <https://github.com/NetEase/example/skel/c/>
 
 ### python distutils
 
 `python setup.py install` 能安装成功，并能安装到 virtualenv。
+
+详见 <http://docs.python.org/distutils/index.html>
+
+样例([源](http://pypi.python.org/pypi/foobar2/0.1)) <https://github.com/NetEase/example/skel/python/>
+
+### java ant/maven
+
+编写 ant 的 `build.xml` 或者 maven 的 `pom.xml`，便于编译整个项目。
+
+详见 <http://ant.apache.org/> <http://maven.apache.org/>
+
+样例(源[1](https://github.com/sl4mmy/ant-skeleton)[2](https://github.com/evanclarke/Maven-Skeleton)) <https://github.com/NetEase/example/skel/java/>
 
 ## 关于 Git
 

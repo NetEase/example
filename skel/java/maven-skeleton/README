@@ -1,0 +1,9 @@
+The purpose of this repository is to provide a basic working skeleton featuring:
+    - Maven building and dependency resolution
+    - git SCM support
+    - Maven release management (scm tagging builds)
+
+Items to do:
+    - Add dependencies to depot
+    - Ideally have a structure like: my-app-1.1.zip, my-app-1.1-sources.zip, my-app-1.1-javadoc.zip
+    - Automated CHANGELOG

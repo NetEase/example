@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: foobar2
+Version: 0.1
+Summary: A hello-world of distutils
+Home-page: kevinslin.com
+Author: ksl
+Author-email: kevinslin8@gmail.com
+License: UNKNOWN
+Description: Welcome to the foo page
+        =======================
+        
+        
+        This is a foo
+        
+Platform: UNKNOWN
+Requires: Django (>1.4)
