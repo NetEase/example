@@ -22,7 +22,7 @@ README.md 文件以“`项目名 - 项目简介`”为标题：
 
 ![project name](https://github.com/NetEase/example/raw/master/doc/images/projectname.png)
 
-在第一部分写上项目介绍，并列出相关链接：
+在标题下面写上项目介绍，并列出相关链接：
 
     This is an example project, aim to be a reference of how project source code and document should be organized.
     
@@ -33,19 +33,19 @@ README.md 文件以“`项目名 - 项目简介`”为标题：
      * Issues: <https://github.com/netease/projectname/issues/>
      * Tags: java, spring
 
-根据这些信息来获取相关链接地址：
+根据这些信息来生成项目详细介绍和相关链接地址：
 
 ![project detail](https://github.com/NetEase/example/raw/master/doc/images/projectdetail.png)
 
-Tags 给项目任意打标签，如编写语言，常见的标签有 `web`、`java`、`c`、`html5`、`libary`、`plugin`。
+相关链接里面的 Tags 给项目任意打标签，如编写语言和项目的用途，常见的标签有 `web`、`java`、`c`、`html5`、`libary`、`plugin` 等。
 
-Markdown 格式和 README.md 文件几个需要注意的地方：
+README.md 文件和 markdown 格式几个需要注意的地方：
 
+ * 项目简介尽可能用一句话介绍
  * 段落顶格开始，空格是格式定义的一部分
  * 代码段空 4 格
- * 项目简介尽可能用一句话介绍
 
-更多 markdown 例子查看 markdown 文档源文件和生成的 HTML。
+更多 markdown 例子查看 markdown 文档源文件和对应的 HTML。
 
  * markdown-basics [源文件](https://github.com/NetEase/example/raw/master/doc/markdown-basics.md) [HTML](https://github.com/NetEase/example/blob/master/doc/markdown-basics.md)
  * markdown-syntax [源文件](https://github.com/NetEase/example/raw/master/doc/markdown-syntax.md) [HTML](https://github.com/NetEase/example/blob/master/doc/markdown-syntax.md)
@@ -133,7 +133,7 @@ AUTHORS 文件列出项目的作者及其联系方式：
 
 ### 推荐读物
 
- * 《Pro Git》: <http://git-scm.com/book/zh>
+ *《Pro Git》: <http://git-scm.com/book/zh>
  * Github 帮助页: <https://help.github.com/>
 
 ### Windows 客户端
