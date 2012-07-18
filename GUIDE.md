@@ -64,6 +64,8 @@ AUTHORS 文件列出项目的作者及其联系方式：
 
 ![authors](https://github.com/NetEase/example/raw/master/doc/images/authors.png)
 
+作者信息将随着项目出现在站点的不同地方，如上面截图中的 `Quick Info`。
+
 ### LICENSE
 
 授权协议内容放在 LICENSE 文件里，建议在文件名后面加上相应的后缀，比如，MIT License 对应的文件名就是 
