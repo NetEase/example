@@ -74,13 +74,9 @@ AUTHORS 文件列出项目的作者及其联系方式：
 若采用多个授权协议，请在 LICENSE 文件里列出协议名称和协议文件名。协议文件名建议采用 `gpl-2.0.txt`、`mpl-2.0.txt`
 这样的形式。
 
-
-
 ### src/
 
 如果没有来自语言或者打包工具的约定和要求，源代码建议放在 `src/` 目录下。
-
-
 
 ### doc/
 
@@ -88,7 +84,19 @@ AUTHORS 文件列出项目的作者及其联系方式：
 
 [文档生成工具]: http://en.wikipedia.org/wiki/Comparison_of_documentation_generators
 
+## 发布版本和 Git tag
 
+按照约定，软件发布版本的时候打上 git 标签，如发布 0.1 打 v0.1 标签：
+
+    $ git tag v0.1
+
+并推送到 github 上：
+
+    $ git push origin --tags
+
+关于 git tag 的详细信息看 [git-tag][] 或者运行 `git help tag`。
+
+[git-tag]: http://git-scm.com/book/zh/Git-%E5%9F%BA%E7%A1%80-%E6%89%93%E6%A0%87%E7%AD%BE
 
 ## 打包
 
@@ -103,3 +111,28 @@ AUTHORS 文件列出项目的作者及其联系方式：
 ### python distutils
 
 `python setup.py install` 能安装成功，并能安装到 virtualenv。
+
+## 关于 Git
+
+### 推荐读物
+
+ * 《Pro Git》: <http://git-scm.com/book/zh>
+ * Github 帮助页: <https://help.github.com/>
+
+### Windows 客户端
+
+ * Github Windows 客户端: <http://windows.github.com/>
+ * msysgit: <http://msysgit.github.com/>
+ * tortoisegit: <http://code.google.com/p/tortoisegit/>
+
+### Linux 客户端
+
+ * Debian/Ubuntu: `apt-get install git`
+ * Fedora/RHEL: `yum install git`
+
+### Mac 客户端
+
+ * Github Mac 客户端: <http://mac.github.com/>
+ * 使用 [homebrew][] 安装: `brew install git`
+
+[homebrew]: http://mxcl.github.com/homebrew/
