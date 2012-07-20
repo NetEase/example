@@ -66,7 +66,7 @@ AUTHORS 文件列出项目的作者及其联系方式：
 
 作者信息将随着项目出现在站点的不同地方，如上面截图中的 `Quick Info`。
 
-头像用作者的邮箱(如上面的 foo@bar.com)为 ID 从 <gravatar.com> 取得，跟 github 的一致。请登陆 gravatar.com 用邮箱注册并更改头像。
+头像用作者的邮箱(如上面的 foo@bar.com)为 ID 从 [gravatar](http://gravatar.com/) 取得，跟 github 的一致。请登陆 <http://gravatar.com> 用邮箱注册并更改头像。
 
 ### LICENSE
 
