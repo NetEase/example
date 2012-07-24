@@ -137,7 +137,7 @@ AUTHORS 文件列出项目的作者及其联系方式：
 
 ### 推荐读物
 
- *《Pro Git》: <http://git-scm.com/book/zh>
+ * 《Pro Git》: <http://git-scm.com/book/zh>
  * Github 帮助页: <https://help.github.com/>
 
 ### Windows 客户端
