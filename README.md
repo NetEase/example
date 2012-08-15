@@ -8,6 +8,7 @@ This is an example project, aim to be a reference of how project source code and
  * Documentation: <http://projectname.readthedocs.org>
  * Wiki: <https://github.com/netease/projectname/wiki/>
  * Issues: <https://github.com/netease/projectname/issues/>
+ * Tags: java, spring
 
 Getting Started
 ---------------
