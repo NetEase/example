@@ -22,7 +22,7 @@ README.md 文件以“`项目名 - 项目简介`”为标题：
 
 ![project name](https://github.com/NetEase/example/raw/master/doc/images/projectname.png)
 
-在标题下面写上项目介绍，并列出相关链接：
+在标题下面写上项目详细介绍，并列出相关链接：
 
     This is an example project, aim to be a reference of how project source code and document should be organized.
     
@@ -44,6 +44,10 @@ README.md 文件和 markdown 格式几个需要注意的地方：
  * 项目简介尽可能用一句话介绍
  * 段落顶格开始，空格是格式定义的一部分
  * 代码段空 4 格
+ * `项目名称 - 简介`必须定义
+ * 项目详细介绍必须定义
+ * 相关连接、类别、标签等信息必须定义
+ * Tags 必须定义并且为最后一项
 
 更多 markdown 例子查看 markdown 文档源文件和对应的 HTML。
 
@@ -60,7 +64,11 @@ AUTHORS 文件列出项目的作者及其联系方式：
 
     * Firstname Lastname <foo@bar.com> <twitter:@foo> <twitter:#foo-list> <weibo:@foo> <github:foo> <linkedin:foo> <http://foo.com>
 
-邮箱地址和主页直接用 `<>` 包起来，其他 twitter、weibo 等按上面的例子写，站点会展示这些信息：
+        Biography about the author, in paragraph format. Hyperlink like http://example.com can be used here.
+
+        Second paragraph.
+
+邮箱地址和主页直接用 `<>` 包起来，其他 twitter、weibo 等按上面的例子写。紧跟 `*` 号行下的不以 `*` 开头的内容视为该用户的简介，最好用一段文字描述，链接等可用markdown的格式编写。站点会展示这些信息：
 
 ![authors](https://github.com/NetEase/example/raw/master/doc/images/authors.png)
 

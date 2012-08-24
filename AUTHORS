@@ -1,2 +1,7 @@
 * Fullname <foo@bar.com> <twitter:@foo> <twitter:#foo-list> <weibo:@foo> <github:foo> <linkedin:foo> <http://foo.com>
+
+    Biography about the author, in paragraph format. Hyperlink like http://example.com can be used here.
+
+    Second paragraph.
+
 * Firstname Lastname <foo@bar.com> <twitter:@foo> <twitter:#foo-list> <weibo:@foo> <github:foo> <linkedin:foo> <http://foo.com>
