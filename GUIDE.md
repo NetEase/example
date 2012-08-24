@@ -44,6 +44,8 @@ README.md 文件和 markdown 格式几个需要注意的地方：
  * 项目简介尽可能用一句话介绍
  * 段落顶格开始，空格是格式定义的一部分
  * 代码段空 4 格
+ * README.md 和 AUTHORS 文件用 UTF-8 编码，否则在 github 上无法正常显示
+ * README.md 里面的 https://github.com/用户名/ 前缀的链接改成 https://github.com/NetEase/ 前缀
  * `项目名称 - 简介`必须定义
  * 项目详细介绍必须定义
  * 相关连接、类别、标签等信息必须定义
