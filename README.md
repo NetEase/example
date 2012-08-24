@@ -1,11 +1,11 @@
-projectname - a Short Description (格式必须是`项目名 - 简介`)
+projectname - a Short Description (格式必须是`项目名 - 简介`，放在文件开头)
 =================================
 
-This is an example project, aim to be a reference of how project source code and document should be organized. (项目详细介绍，一般是一段或几段话，必须有)
+This is an example project, aim to be a reference of how project source code and document should be organized. (项目详细介绍，紧接标题之后，一般是一段或几段话，必须有)
 
 Second paragraph.
 
- * Homepage: <http://netease.github.com/projectname> (项目相关链接，没有的项可以不写)
+ * Homepage: <http://netease.github.com/projectname> (项目相关链接，紧接详细介绍之后，没有的项可以不写)
  * Mailing list: <https://groups.google.com/group/projectname>
  * Documentation: <http://projectname.readthedocs.org>
  * Wiki: <https://github.com/netease/projectname/wiki/>
